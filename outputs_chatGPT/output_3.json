@@ -1,0 +1,419 @@
+{
+    "buggy": [
+        {
+            "ut10_tflin.py": {
+                "error_count": 6,
+                "error": [
+                    "[error]: [23: X = tf.placeholder(tf.float32, [n_input])] The placeholder X is defined with shape [n_input] which is a 1D array, but later in the code it is fed with train_X and test_X which are 2D arrays. The shape of the placeholder should match the shape of the data it will be fed.",
+                    "[error]: [24: Y = tf.placeholder(tf.float32)] The placeholder Y is defined with no shape, but later in the code it is fed with train_Y and test_Y which are 1D arrays. The shape of the placeholder should match the shape of the data it will be fed.",
+                    "[error]: [25: W = tf.Variable(tf.zeros([6]), name=\"weight\")] The weight variable W is defined with a fixed shape of [6], but it should match the number of features in the input data, which is n_input. The shape of W should be [n_input].",
+                    "[error]: [27: activation = tf.add(tf.multiply(X, W), b)] The shapes of X and W are not compatible for multiplication. X is a 2D array with shape [None, n_input] and W is a 1D array with shape [6]. The shapes should be compatible for element-wise multiplication.",
+                    "[error]: [28: cost = tf.reduce_sum(tf.pow(activation - Y, 2)) / (2 * n_samples)] The shapes of activation and Y are not compatible for subtraction. activation is a 2D array with shape [None, n_input] and Y is a 1D array with shape [None]. The shapes should be compatible for element-wise subtraction.",
+                    "[error]: [38: testing_cost = sess.run(tf.reduce_sum(tf.pow(activation - Y, 2)) / (2 * test_X.shape[0]), feed_dict={X: test_X, Y: test_Y})] The shapes of activation and Y are not compatible for subtraction. activation is a 2D array with shape [None, n_input] and Y is a 1D array with shape [None]. The shapes should be compatible for element-wise subtraction."
+                ]
+            }
+        },
+        {
+            "ut11_image.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: [14: print(sess.run(X, feed_dict={X: x_expended_trans}))] The shape of the placeholder X is [None, 250, 250, 3] but the shape of the fed data x_expended_trans is [1, 3, 250, 250]. The dimensions are not in the correct order."
+                ]
+            }
+        },
+        {
+            "ut12_mnist.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut13_linear.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: [line 24] corrects = tf.equal(tf.argmax(Y, 1), tf.argmax(Yhat1, 1)) REASON: tf.argmax(Y, 1) and tf.argmax(Yhat1, 1) are used to find the index of maximum value across dimension 1. But Y and Yhat1 are of shape [4, 1], they only have one column. So, the dimension for tf.argmax should be 0."
+                ]
+            }
+        },
+        {
+            "ut15_fitting.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut1_mnist.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut2_multiplication.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: [16: p = tf.matmul(A_tf, B_tf)] The shapes of A_tf and B_tf are not compatible for matrix multiplication. tf.matmul expects two tensors of rank 2, but B_tf is of rank 3."
+                ]
+            }
+        },
+        {
+            "ut3_image_set_shape.py": {
+                "error_count": 2,
+                "error": [
+                    "[error]: [9: y.set_shape([478, 717, 3])] The tensor 'y' is set to have a shape of [478, 717, 3], which does not match with the shape of 'x' which is [1028178]. The 'tf.identity' operation produces a tensor with the same shape as its input, so 'y' should have the same shape as 'x'.",
+                    "[error]: [13: Y = sess.run(y, feed_dict={x: X})] The shape of the numpy array 'X' is [1028178], which matches the shape of 'x', but does not match the shape of 'y'. This will cause a shape mismatch error when trying to run the session."
+                ]
+            }
+        },
+        {
+            "ut4_experiment.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut5_mnist.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: [y = tf.placeholder(\"float\", [None, n_classes])] The shape of the placeholder y is defined as [None, n_classes] which means it expects labels in a one-hot encoded format. However, the labels are loaded from the mnist dataset without one-hot encoding (one_hot=False). This will cause a shape mismatch when feeding the labels to the placeholder y."
+                ]
+            }
+        },
+        {
+            "ut6_word_representation.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: [return tf.matmul(layer_2, weights['out']) + biases['out']] The output of the second layer and the weights['out'] are not compatible for matrix multiplication. The weights['out'] should have a shape of [o2, n_classes] instead of [o2, 1]. Similarly, the biases['out'] should have a shape of [n_classes] instead of [1]."
+                ]
+            }
+        },
+        {
+            "ut7_playing.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut8_multiply.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: [7: l1 = tf.matmul(T1, x)] The shapes of T1 and x are not compatible for matrix multiplication. tf.matmul expects the last dimension of the first input (T1) and the second-to-last dimension of the second input (x) to be the same. Here, T1 has shape [2, 2] and x has shape [2], so the operation is not valid."
+                ]
+            }
+        },
+        {
+            "ut9_neural.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: [16: y = tf.placeholder(\"float\")] The shape of the placeholder y is not defined. It should be defined as [None, 2] to match the output of the neural network model. The current placeholder y does not have a shape which will cause a shape mismatch error when it is used as labels in the softmax_cross_entropy_with_logits function."
+                ]
+            }
+        }
+    ],
+    "buggy_runinfo": [
+        {
+            "ut10_tflin_runinfo.py": {
+                "error_count": 4,
+                "error": [
+                    "[error]: [23: X = tf.placeholder(tf.float32, [n_input])] The placeholder X is defined with shape [n_input] which is a 1D array, but later in the code it is fed with 2D array train_X and test_X. The shape should be [None, n_input] to match the shape of train_X and test_X.",
+                    "[error]: [24: Y = tf.placeholder(tf.float32)] The placeholder Y is defined with no shape, but later in the code it is fed with 1D array train_Y and test_Y. The shape should be [None] to match the shape of train_Y and test_Y.",
+                    "[error]: [25: W = tf.Variable(tf.zeros([6]), name=\"weight\")] The weight W is defined with shape [6] which is a 1D array, but it should be a 2D array to match the multiplication with X in the activation function. The shape should be [n_input, 1].",
+                    "[error]: [26: b = tf.Variable(tf.zeros([1]), name=\"bias\")] The bias b is defined with shape [1] which is a 1D array, but it should be a scalar to match the addition with the result of tf.multiply(X, W) in the activation function. The shape should be []."
+                    ]
+            }
+        },
+        {
+            "ut11_image_runinfo.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: [last line: print(sess.run(X, feed_dict={X: x_expended_trans}))] The placeholder X expects an input of shape [None, 250, 250, 3], but x_expended_trans has a shape of [1, 3, 250, 250]. The dimensions are not aligned correctly."
+                ]
+            }
+        },
+        {
+            "ut12_mnist_runinfo.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut13_linear_runinfo.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: [line 37] corrects = tf.equal(tf.argmax(Y, 1), tf.argmax(Yhat1, 1)) REASON: tf.argmax(Y, 1) and tf.argmax(Yhat1, 1) are used to find the index of maximum value across dimension 1. But Y and Yhat1 are of shape [4, 1]. They only have one column, so the maximum value index will always be 0. This operation is meaningless in this context."
+                ]
+            }
+        },
+        {
+            "ut15_fitting_runinfo.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut1_mnist_runinfo.py": {
+                "error_count": 5,
+                "error": [
+                    "error: [LINENUMBER: h_conv1 = tf.placeholder(tf.float32, [None, 24, 24, 32])] The shape of h_conv1 is defined as [None, 24, 24, 32] but it should be [None, 28, 28, 32] because the input image is of size 28x28 and we are using 32 filters.",
+                    "error: [LINENUMBER: h_conv2 = tf.placeholder(tf.float32, [None, 8, 8, 64])] The shape of h_conv2 is defined as [None, 8, 8, 64] but it should be [None, 14, 14, 64] because the input to the second convolutional layer is of size 14x14 and we are using 64 filters.",
+                    "error: [LINENUMBER: h_pool1 = tf.placeholder(tf.float32, [None, 12, 12, 32])] The shape of h_pool1 is defined as [None, 12, 12, 32] but it should be [None, 14, 14, 32] because the output of the first max pooling layer is of size 14x14 and we are using 32 filters.",
+                    "error: [LINENUMBER: h_pool2 = tf.placeholder(tf.float32, [None, 4, 4, 64])] The shape of h_pool2 is defined as [None, 4, 4, 64] but it should be [None, 7, 7, 64] because the output of the second max pooling layer is of size 7x7 and we are using 64 filters.",
+                    "error: [LINENUMBER: y_conv = tf.placeholder(tf.float32, [None, 10])] The shape of y_conv is defined as [None, 10] but it should be [None, 1] because the output of the softmax function is a scalar probability for each class."
+                ]
+            }
+        },
+        {
+            "ut2_multiplication_runinfo.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: [p = tf.matmul(A_tf, B_tf)] The shapes of A_tf and B_tf are not compatible for matrix multiplication. A_tf has shape (5, 2) and B_tf has shape (2, 2, 3). The last dimension of A_tf should match the second-to-last dimension of B_tf for matrix multiplication."
+                ]
+            }
+        },
+        {
+            "ut3_image_set_shape_runinfo.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: [9: y.set_shape([478, 717, 3])] The tensor 'y' is defined as the identity of 'x', which means it has the same shape as 'x'. However, the shape of 'y' is then set to [478, 717, 3], which is a 3D shape. This is inconsistent with the 1D shape of 'x', and will cause a shape mismatch error."
+                ]
+            }
+        },
+        {
+            "ut4_experiment_runinfo.py": {
+                "error_count": 3,
+                "error": [
+                    "error: 125: train_accuracy = accuracy.eval(feed_dict={x: image_batch, y: label_batch, keep_prob: 1.0}) REASON: The placeholder 'y' expects a one-hot encoded vector of size [None, 10] but 'label_batch' is a list of integers. The shapes do not match.",
+                    "error: 127: train_step.run(feed_dict={x: image_batch, y: label_batch, keep_prob: 0.5}) REASON: The placeholder 'y' expects a one-hot encoded vector of size [None, 10] but 'label_batch' is a list of integers. The shapes do not match.",
+                    "error: 130: accuracy.eval(feed_dict={x: test_images, y: test_labels, keep_prob: 1.0}) REASON: The placeholder 'y' expects a one-hot encoded vector of size [None, 10] but 'test_labels' is a list of integers. The shapes do not match."
+                ]
+            }
+        },
+        {
+            "ut5_mnist_runinfo.py": {
+                "error_count": 2,
+                "error": [
+                    "error: [LINE: y = tf.placeholder(\"float\", [None, n_classes])] REASON: The shape of the placeholder 'y' is defined as [None, n_classes] which is [None, 10]. But the labels are read as one_hot=False which means they are not one-hot encoded and their shape is [None,]. The shape of the placeholder 'y' should be [None,].",
+                    "error: [LINE 47: sess.run(optimizer, feed_dict={x: batch_x, y: batch_y})] REASON: The shape of batch_y does not match the expected shape. The placeholder y expects a one-hot encoded vector of size 10 for each example, but batch_y from mnist.train.next_batch(params['batch_size']) returns a single integer label for each example."
+                ]
+            }
+        },
+        {
+            "ut6_word_representation_runinfo.py": {
+                "error_count": 1,
+                "error": [
+                    "error: return tf.matmul(layer_2, weights['out']) + biases['out'] REASON: The output layer in the multilayer_perceptron function is trying to perform a matrix multiplication with shapes that don't align. The 'weights['out']' tensor has shape [o2, 1] but it should have shape [o2, n_classes] to match the shape of the 'y' placeholder. Similarly, the 'biases['out']' tensor has shape [1] but it should have shape [n_classes]."
+                ]
+            }
+        },
+        {
+            "ut7_playing_runinfo.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut8_multiply_runinfo.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: [7: l1 = tf.matmul(T1, x)] The shapes of T1 and x are not compatible for matrix multiplication. tf.matmul expects the last dimension of the first input (T1) and the second-to-last dimension of the second input (x) to be the same. Here, T1 has shape [2, 2] and x has shape [2], so the operation is not valid."
+                ]
+            }
+        },
+        {
+            "ut9_neural_runinfo.py": {
+                "error_count": 2,
+                "error": [
+                    "[error]: [23: y = tf.placeholder(\"float\")] REASON: The shape of the placeholder 'y' is not defined. It should match the shape of the labels. In this case, it should be [None, n_data].",
+                    "[error]: [32: cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=prediction, labels=y))] REASON: The shapes of 'prediction' and 'y' do not match. The 'labels' argument in 'softmax_cross_entropy_with_logits' expects a tensor of the same shape as 'logits'."
+                ]
+            }
+        }
+    ],
+    "fix": [
+        {
+            "ut10_tflin_fix.py": {
+                "error_count": 1,
+                "error": [
+                    "error: [W = tf.Variable(tf.zeros([6, 1]), name=\"weight\")] The shape of the weight matrix W is not compatible with the input matrix X. The number of rows in W should be equal to the number of columns in X. Here, W is initialized with a shape of [6, 1] but X has a shape of [None, n_input] where n_input is the number of features in the input data. The shapes are not compatible for matrix multiplication in the line 'activation = tf.add(tf.matmul(X, W), b)'."
+                ]
+            }
+        },
+        {
+            "ut11_image_fix.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut12_mnist_fix.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut13_linear_fix.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut15_fitting_fix.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut1_mnist_fix.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut2_multiplication_fix.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut3_image_set_shape_fix.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: [9: y = tf.reshape(y, [478, 717, 3])] The reshape operation expects the total size of new shape [478, 717, 3] to be equal to the total size of the original shape [1028178]. However, 478*717*3 equals 1028196, which is not equal to 1028178. This will cause a shape mismatch error."
+                ]
+            }
+        },
+        {
+            "ut4_experiment_fix.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut5_mnist_fix.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut6_word_representation_fix.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: [return tf.matmul(layer_2, weights['out']) + biases['out']] REASON: The output of the multilayer_perceptron function has a shape of [None, 1] due to the weights['out'] shape of [o2, 1]. However, this is being used as the logits in tf.nn.softmax_cross_entropy_with_logits, where it is expected to match the shape of labels, which is [None, n_classes] or [None, 10]. The shapes [None, 1] and [None, 10] are incompatible."
+                ]
+            }
+        },
+        {
+            "ut7_playing_fix.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut8_multiply_fix.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut9_neural_fix.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: [19: y_trans = tf.transpose(y, [1, 0])] REASON: The transpose operation is not applicable to 'y' as it is a 1D tensor. The transpose operation requires a tensor of rank 2 or more."
+                ]
+            }
+        }
+    ],
+    "fix_runinfo": [
+        {
+            "ut10_tflin_fix_runinfo.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut11_image_fix_runinfo.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut12_mnist_fix_runinfo.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut13_linear_fix_runinfo.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut15_fitting_fix_runinfo.py": {
+                "error_count": 1,
+                "error": [
+                    "Error: [19: sess.run(train_step)] The placeholders x, y, and y_ are not being fed any values during the session run."
+                ]
+            }
+        },
+        {
+            "ut1_mnist_fix_runinfo.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut2_multiplication_fix_runinfo.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut3_image_set_shape_fix_runinfo.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: [y = tf.reshape(y, [478, 717, 3])]: The reshape operation is trying to reshape the tensor 'y' into a shape of [478, 717, 3] which is a total of 1028178 elements. However, the original tensor 'y' has a shape of [1028178,] which is a total of 1028178 elements. This is not a shape mismatch error, but it is a reshape operation error. The reshape operation should be able to reshape the tensor 'y' into the desired shape without any issues."
+                ]
+            }
+        },
+        {
+            "ut4_experiment_fix_runinfo.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut5_mnist_fix_runinfo.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut6_word_representation_fix_runinfo.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: return tf.matmul(layer_2, weights['out']) + biases['out'] REASON: The shape of weights['out'] is [o2, 1] but it should be [o2, n_classes] to match the shape of biases['out'] which is [n_classes]. The shapes of the two tensors being added must match."
+                ]
+            }
+        },
+        {
+            "ut7_playing_fix_runinfo.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut8_multiply_fix_runinfo.py": {
+                "error_count": 0,
+                "error": []
+            }
+        },
+        {
+            "ut9_neural_fix_runinfo.py": {
+                "error_count": 1,
+                "error": [
+                    "[error]: [y_trans = tf.transpose(y, [1, 0])] REASON: The transpose operation expects 'y' to be a 2D tensor, but 'y' is a 1D tensor as defined in the placeholder."
+                ]
+            }
+        }
+    ]
+}
