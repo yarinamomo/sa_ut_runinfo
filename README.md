@@ -1,5 +1,9 @@
 # Using Run-time Information to Enhance Static Analysis of Machine Learning Notebooks
 
+This is the anonymized GitHub repository for our paper: **Using Run-time Information to Enhance Static Analysis of Machine Learning Notebooks**
+
+### The *detailed* results can be found: [preliminary_results.pdf](https://anonymous.4open.science/r/sa_ut_runinfo-B605/preliminary_results.pdf)
+
 ## Dataset
 
 - The original UT dataset can be found at https://github.com/ForeverZyh/TensorFlow-Program-Bugs [1]
@@ -15,7 +19,7 @@ An explanation of how the run-time information is injected can be found in integ
 
 ## Results
 
-- Overall results: preliminary_results
+- Overall results: preliminary_results.pdf
 - Detailed results of GPT-4: outputs_chatGPT
 - Detailed results of Pythia: outputs_pythia
 
