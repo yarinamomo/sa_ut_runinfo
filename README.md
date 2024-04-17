@@ -1,6 +1,6 @@
 # Using Run-time Information to Enhance Static Analysis of Machine Learning Notebooks
 
-This is the GitHub repository for our paper: **Using Run-time Information to Enhance Static Analysis of Machine Learning Notebooks**
+This is the GitHub repository for our paper: **Using Run-time Information to Enhance Static Analysis of Machine Learning Notebooks**. The paper has just been accepted to [FSE-IVR 2024](https://2024.esec-fse.org/track/fse-2024-ideas--visions-and-reflections). The link to this paper will be updated once it is in the proceedings.
 
 ### The *detailed* results can be found: [preliminary_results.pdf](https://anonymous.4open.science/r/sa_ut_runinfo-B605/preliminary_results.pdf)
 
