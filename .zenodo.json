@@ -32,11 +32,10 @@
 
     "related_identifiers": [
         {
-            "description": "Related research outputs.",
             "scheme": "doi",
             "identifier": "https://doi.org/10.1145/3663529.3663785",
             "relation": "isSupplementTo",
-            "resource_type": "conferencepaper"
+            "resource_type": "publication"
         }
     ],
     "references": [
