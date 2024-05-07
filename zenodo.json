@@ -1,0 +1,47 @@
+{
+    "creators": [
+        {
+            "affiliation": "Linköping University",
+            "name": "Yiran Wang",
+            "orcid": "0009-0007-4613-8960"
+        },
+        {
+            "affiliation": "Linköping University",
+            "name": "José Antonio Hernández López",
+            "orcid": "0000-0003-2439-2136"
+        },
+        {
+            "affiliation": "Linköping University",
+            "name": "Ulf Nilsson",
+            "orcid": "0000-0003-0269-9268"
+        },
+        {
+            "affiliation": "Linköping University",
+            "name": "Dániel Varró",
+            "orcid": "0000-0002-8790-252X"
+        }
+    ],
+    "description": "This repository offers a thorough explanation of the experiments detailed in the paper, encompassing detailed documentation of configurations, procedures, intermediate logs, and final results. Its goal is to promote transparency and reproducibility in the research process, empowering others to verify and expand upon the findings presented in the paper.",
+    "keywords": [
+        "static analysis", "run-time information", "notebook", "machine learning bugs", "large language models"
+    ],
+
+    "title": "Repository of paper - Using Run-time Information to Enhance Static Analysis of Machine Learning Code in Notebooks",
+
+    "upload_type": "other",
+
+    "related_identifiers": [
+        {
+            "description": "Related research outputs.",
+            "scheme": "doi",
+            "identifier": "https://doi.org/10.1145/3663529.3663785",
+            "relation": "isSupplementTo",
+            "resource_type": "conferencepaper"
+        }
+    ],
+    "references": [
+        "Yuhao Zhang, Yifan Chen, Shing-Chi Cheung, Yingfei Xiong, Lu Zhang, An Empirical Study on TensorFlow Program Bugs Proceedings of the 27th ACM SIGSOFT International Symposium on Software Testing and Analysis, 2018.",
+        "Sifis Lagouvardos, Julian Dolby, Neville Grech, Anastasios Antoniadis, Yannis Smaragdakis, Static Analysis of Shape in TensorFlow Programs, 34th European Conference on Object-Oriented Programming, 2020.",
+        "OpenAI et al. 2023. Gpt-4 technical report. (2023). arXiv: 2303.08774 [cs.CL]."
+    ]
+}
